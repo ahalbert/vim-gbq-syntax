@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	Google Big Query SQL
-" Maintainer:	Armand Halber
-" Repository:   https://github.com/chrisbra/vim-sqloracle-syntax
+" Maintainer:	Armand Halbert
+" Repository: https://github.com/ahalbert/vim-gbq-syntax
 " License:      Vim
 
 if exists("b:current_syntax")
@@ -14,23 +14,23 @@ syn case ignore
 
 syn keyword sqlSpecial	false null true
 
-syn keyword sqlKeyword	access add as asc begin by case check cluster column
-syn keyword sqlKeyword	cache compress connect current cursor decimal default desc
-syn keyword sqlKeyword	else elsif end exception exclusive file for from
-syn keyword sqlKeyword	function group having identified if immediate increment
-syn keyword sqlKeyword	index initial initrans into is level link logging loop
-syn keyword sqlKeyword	maxextents maxtrans mode modify monitoring
-syn keyword sqlKeyword	nocache nocompress nologging noparallel nowait of offline on online start
-syn keyword sqlKeyword	parallel successful synonym table tablespace then to trigger uid
-syn keyword sqlKeyword	unique user validate values view when whenever
-syn keyword sqlKeyword	where with option order pctfree pctused privileges procedure
-syn keyword sqlKeyword	public resource return row rowlabel rownum rows
-syn keyword sqlKeyword	session share size smallint type using
+syn keyword sqlKeyword	access add as asc begin by case cluster column
+syn keyword sqlKeyword	connection constraint continue current default desc data
+syn keyword sqlKeyword	else elsif end except exclude export files for from
+syn keyword sqlKeyword	function group having if immediate increment
+syn keyword sqlKeyword	index into is limit load
+syn keyword sqlKeyword	model modify matched no key of offset 
+syn keyword sqlKeyword	partition partitions pivot qualify source synonym table tablesample target
+syn keyword sqlKeyword	target then to trigger 
+syn keyword sqlKeyword	unique values view when 
+syn keyword sqlKeyword	where with option order primary range
+syn keyword sqlKeyword	recursive references reservation respect restrict repeat return row rows 
+syn keyword sqlKeyword	unbounded using 
 syn keyword sqlKeyword	join cross inner outer left right
 
 syn keyword sqlOperator	not and or
 syn keyword sqlOperator	in any some all between exists
-syn keyword sqlOperator	like escape
+syn keyword sqlOperator	like escape unnest
 syn keyword sqlOperator	union intersect minus
 syn keyword sqlOperator	prior distinct
 syn keyword sqlOperator	sysdate out
@@ -63,6 +63,12 @@ syn match sqlNumber	"-\=\<\d*\.\=[0-9_]\>"
 syn region sqlComment	start="/\*"  end="\*/" contains=sqlTodo,@Spell fold 
 syn match sqlComment	"--.*$" contains=sqlTodo,@Spell
 syn match sqlComment "^rem.*$" contains=sqlTodo,@Spell
+
+" Setup Folding:
+" this is a hack, to get certain statements folded.
+" the keywords create/update/alter/select/insert need to
+" have contained option.
+syn region sqlFold start='^\s*\zs\c\(Create\|Update\|Alter\|Select\|Insert\)' end=';$\|^$' transparent fold contains=ALL
 
 syn sync ccomment sqlComment
 
@@ -130,5 +136,5 @@ hi def link sqlString		String
 hi def link sqlType		Type
 hi def link sqlTodo		Todo
 
-let b:current_syntax = "gbq"
+let b:current_syntax = "sql"
 " vim: ts=8
