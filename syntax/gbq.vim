@@ -175,6 +175,5 @@ hi def link sqlStatement	Statement
 hi def link sqlString		String
 hi def link sqlType		Type
 hi def link sqlTodo		Todo
-OUNT
 let b:current_syntax = "sql"
 " vim: ts=8
