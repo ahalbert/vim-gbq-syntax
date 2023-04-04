@@ -25,7 +25,7 @@ syn keyword sqlKeyword	target then to trigger transaction
 syn keyword sqlKeyword	unique values view when 
 syn keyword sqlKeyword	where with options order primary range
 syn keyword sqlKeyword	recursive references reservation respect restrict repeat return row rows 
-syn keyword sqlKeyword	unbounded using 
+syn keyword sqlKeyword	temp unbounded using 
 syn keyword sqlKeyword	join cross inner outer left right false 
 
 "GBQ ML Option Keywords
@@ -35,18 +35,18 @@ syn keyword sqlKeyword data_split_method data_split_eval_fraction data_split_col
 syn keyword sqlKeyword ls_init_learn_rate warm_start auto_class_weights class_weights
 syn keyword sqlKeyword enable_global_explain calculate_p_values fit_intercept category_encoding_method
 
-syn keyword sqlOperator	not and or
+syn keyword sqlOperator	not and or replace
 syn keyword sqlOperator	in any some all between exists
 syn keyword sqlOperator	like escape unnest
 syn keyword sqlOperator	union intersect minus
 syn keyword sqlOperator	distinct interval
 syn keyword sqlOperator	out
 
-syn keyword sqlStatement delete drop execute grant lock noaudit
+syn keyword sqlStatement call delete drop execute grant lock 
 syn keyword sqlStatement rename rollback set
 syn keyword sqlStatement truncate
 " next ones are contained, so folding works.
-syn keyword sqlStatement create update alter select insert contained
+syn keyword sqlStatement create update alter select insert call contained
 
 " GBQ Data Types
 syn keyword sqlType	array bignumeric bool bytes date datetime float64
