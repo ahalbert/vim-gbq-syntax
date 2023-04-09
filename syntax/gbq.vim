@@ -25,7 +25,7 @@ syn keyword sqlKeyword	target then to trigger transaction
 syn keyword sqlKeyword	unique values view when 
 syn keyword sqlKeyword	where with options order primary range
 syn keyword sqlKeyword	recursive references reservation respect restrict repeat return row rows 
-syn keyword sqlKeyword	temp unbounded using 
+syn keyword sqlKeyword	temp temporary unbounded using 
 syn keyword sqlKeyword	join cross inner outer left right false 
 
 "GBQ ML Option Keywords
@@ -153,7 +153,7 @@ syn keyword sqlFunction	ascii byte_length char_length character_length chr code_
 syn keyword sqlFunction	code_points_to_string collate concat contains_substr ends_with format
 syn keyword sqlFunction	from_base32 from_base64 from_hex initcap instr left length lower lpad
 syn keyword sqlFunction	ltrim normalize_and_casefold normalize octet_length regexp_contains 
-syn keyword sqlFunction	regexp_extract regexp_instr regexp_replace regexp_substr repeat replace
+syn keyword sqlFunction	regexp_extract regexp_instr regexp_replace regexp_substr repeat 
 syn keyword sqlFunction	reverse right rpad rtrim safe_convert_bytes_to_string soundex split
 syn keyword sqlFunction	starts_with strpos substr substring to_base32 to_base64 to_code_points
 syn keyword sqlFunction	to_hex translate trim unicode upper
