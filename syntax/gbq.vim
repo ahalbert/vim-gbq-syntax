@@ -35,7 +35,7 @@ syn keyword sqlKeyword data_split_method data_split_eval_fraction data_split_col
 syn keyword sqlKeyword ls_init_learn_rate warm_start auto_class_weights class_weights
 syn keyword sqlKeyword enable_global_explain calculate_p_values fit_intercept category_encoding_method
 
-syn keyword sqlOperator	not and or replace
+syn keyword sqlOperator	not and or replace on
 syn keyword sqlOperator	in any some all between exists
 syn keyword sqlOperator	like escape unnest
 syn keyword sqlOperator	union intersect minus
